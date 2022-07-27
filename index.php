@@ -24,11 +24,12 @@ class Movie {
 
 }
 $titanic = new Movie('Titanic','Romance','1997');
-$titanic->getStatus();
+$titanic->calculateStatus();
 var_dump($titanic);
+var_dump($titanic->getStatus());
 
 $topGun = new Movie('Top Gun: Maverick', 'Action','2022');
-$topGun->getStatus();
+$topGun->calculateStatus();
 var_dump($topGun);
 
 ?>
@@ -43,7 +44,14 @@ var_dump($topGun);
 </head>
 <body>
     <div>
-        <h2><?php  ?></h2>
+        <h2>Titolo:<?php echo($titanic->title); ?></h2>
+        <h3>Genere:<?php echo($titanic->genre); ?></h3>
+        <h4>Status:<?php echo($titanic->status); ?></h4>
+    </div>
+    <div>
+        <h2>Titolo:<?php echo($topGun->title); ?></h2>
+        <h3>Genere:<?php echo($topGun->genre); ?></h3>
+        <h4>Status:<?php echo($topGun->status); ?></h4>
     </div>
 </body>
 </html>
