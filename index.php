@@ -1,25 +1,31 @@
 <?php
 
-class Character {
-    public $name;
-    public $class;
-    public $level;
-    public $hp;
+class Movie {
+    public $title;
+    public $genre;
+    public $releaseDate;
+    public $status;
 
-    public function __construct($_name, $_class, $_level){
-        $this->$name = $_name;
-        $this->$class = $_class;
-        $this->$level = $_level;
+    public function __construct($_title, $_genre, $_releaseDate){
+        $this->$title = $_title;
+        $this->$genre = $_genre;
+        $this->$releaseDate = $_releaseDate;
     }
-     public function calculateHp(){
-         $randomNumber = rand(1,10);
+    public function calculateStatus(){
+         if(2022 - $this->releaseDate <2){
+            $this-> status = 'New';
+         } else{
+            $this-> status = 'Old';
+         }
          $characterLevel = $this -> level;
          return $this -> hp = $randomNumber * $characterLevel;
      }
-
+     public function getStatus(){
+        return $this->status;
+     }
 
 }
-$legolas = new Character('Legolas','Arciere','8');
-var_dump($legolas);
+$titanic = new Movie('Titanic','Romance','1997');
+var_dump($titanic);
 
 ?>
