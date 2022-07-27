@@ -7,9 +7,9 @@ class Movie {
     public $status;
 
     public function __construct($_title, $_genre, $_releaseDate){
-        $this->$title = $_title;
-        $this->$genre = $_genre;
-        $this->$releaseDate = $_releaseDate;
+        $this->title = $_title;
+        $this->genre = $_genre;
+        $this->releaseDate = $_releaseDate;
     }
     public function calculateStatus(){
          if(2022 - $this->releaseDate <2){
@@ -17,8 +17,7 @@ class Movie {
          } else{
             $this-> status = 'Old';
          }
-         $characterLevel = $this -> level;
-         return $this -> hp = $randomNumber * $characterLevel;
+        return $this->status;
      }
      public function getStatus(){
         return $this->status;
@@ -26,6 +25,8 @@ class Movie {
 
 }
 $titanic = new Movie('Titanic','Romance','1997');
+$titanic->getStatus();
 var_dump($titanic);
+var_dump($titanic->getStatus());
 
 ?>
